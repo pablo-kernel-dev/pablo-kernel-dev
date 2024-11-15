@@ -1,0 +1,1 @@
+export const CONFIG_UI = "bg-stone-200/80 dark:bg-stone-900/80 outline outline-2 outline-sky-900 p-4 rounded-xl";
