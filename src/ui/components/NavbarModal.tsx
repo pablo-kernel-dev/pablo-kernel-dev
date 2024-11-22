@@ -1,23 +1,28 @@
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { Button } from '@/ui/components';
-import { MenuCloseIcon, MenuOpenIcon } from '@/utils/icons';
+"use client";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/ui/components";
+import { MenuCloseIcon, MenuOpenIcon } from "@/utils/icons";
 
-const defaultRoute = '';
+const defaultRoute = "";
 
 const links = [
   {
     url: `${defaultRoute}home`,
-    label: 'inicio',
+    label: "inicio",
+  },
+  {
+    url: `${defaultRoute}resume`,
+    label: "curriculum",
   },
   {
     url: `${defaultRoute}app-projects`,
-    label: 'proyectos',
+    label: "proyectos",
   },
   {
     url: `${defaultRoute}about`,
-    label: 'sobre mí',
+    label: "sobre mí",
   },
 ];
 
@@ -31,9 +36,9 @@ const NavbarModal = () => {
       <Button
         onClick={() => setOpenMenu(!openMenu)}
         rightIcon={<MenuOpenIcon />}
-        text={'menú'}
-        title={'abrir menú'}
-        styles='fixed right-0 m-2'
+        text={"menú"}
+        title={"abrir menú"}
+        styles="fixed right-0 m-2 print:hidden"
       />
 
       {
@@ -46,9 +51,9 @@ const NavbarModal = () => {
               <Button
                 onClick={() => setOpenMenu(!openMenu)}
                 rightIcon={<MenuCloseIcon />}
-                styles={'self-end'}
-                text={'cerrar'}
-                title={'cerrar menú'}
+                styles={"self-end"}
+                text={"cerrar"}
+                title={"cerrar menú"}
               />
             </header>
 
@@ -59,7 +64,7 @@ const NavbarModal = () => {
                     <Link
                       href={option.url}
                       onClick={() => setOpenMenu(!openMenu)}
-                      className={`text-xl py-1 px-2 flex items-center gap-2 hover:bg-stone-400 dark:hover:bg-stone-700 ${(pathname === ('/' + option.url)) && 'bg-sky-900 hover:bg-sky-900 dark:hover:bg-sky-900 text-stone-200'}`}
+                      className={`text-xl py-1 px-2 flex items-center gap-2 hover:bg-stone-400 dark:hover:bg-stone-700 ${(pathname === ("/" + option.url)) && "bg-sky-900 hover:bg-sky-900 dark:hover:bg-sky-900 text-stone-200"}`}
                     >
                       {option.label}
                     </Link>

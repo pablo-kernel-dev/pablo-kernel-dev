@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Button } from './';
+"use client";
+import { useState } from "react";
+import { Button } from "./";
 
 interface ModalWindowProps {
   actionButtonText: string;
@@ -11,7 +12,7 @@ interface ModalWindowProps {
 }
 
 export function ModalWindow({
-  actionButtonText = 'abrir',
+  actionButtonText = "abrir",
   children,
   leftButtonIcon,
   modalTitle,
@@ -41,8 +42,8 @@ export function ModalWindow({
               <Button
                 onClick={() => setOpenModal(!openModal)}
                 rightIcon={rightButtonIcon}
-                text={'cerrar'}
-                title={'cerrar ventana'}
+                text={"cerrar"}
+                title={"cerrar ventana"}
               />
             </header>
 

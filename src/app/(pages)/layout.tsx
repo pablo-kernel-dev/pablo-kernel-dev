@@ -58,7 +58,7 @@ export default function Layout({
               </p>
 
               <p className="text-sm text-stone-400 text-nowrap">
-                Ver. 1.0.1
+                Ver. 1.0.2
               </p>
             </div>
           </footer>
