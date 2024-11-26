@@ -17,7 +17,7 @@ const ItemList: FC<ItemProps> = ({ data, index }) => {
   return (
     <li className={`${DEFAULT_STYLES} p-2 rounded-xl cursor-pointer space-y-2`}>
       <p onClick={toggleShowMore}>
-        {index}. {data.name} {data.status && <span className="text-green-500"> FINALIZADA</span>}
+        {index}. {data.name} {data.status && <span className="text-green-500 font-bold "> FINALIZADA</span>}
       </p>
 
       {showMore &&

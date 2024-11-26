@@ -18,7 +18,7 @@ const TaskCard: FC<TaskCardProps> = ({ data }) => {
       <div onClick={toggleShowMore}>
         <p><span className="uppercase border-b-2 border-sky-700">id tarea</span>: {data.id}</p>
         <h3><span className="uppercase border-b-2 border-sky-700">tarea</span>: {data.name}</h3>
-        <p><span className="uppercase border-b-2 border-sky-700">estado</span>: <span className={data.status ? "text-green-500" : "text-red-500"}>{data.status ? "FINALIZADA" : "INCOMPLETA"}</span></p>
+        <p><span className="uppercase border-b-2 border-sky-700">estado</span>: <span className={`font-bold ${data.status ? "text-green-500" : "text-red-500"}`}>{data.status ? "FINALIZADA" : "INCOMPLETA"}</span></p>
       </div>
 
       {showMore &&

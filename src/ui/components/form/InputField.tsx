@@ -19,7 +19,7 @@ interface InputFieldProps {
   value?: string | number | readonly string[] | undefined;
 }
 
-const InputField = ({
+const InputField: React.FC<InputFieldProps> = ({
   accept,
   checked,
   defaultChecked,
@@ -38,12 +38,12 @@ const InputField = ({
   title,
   type = "text",
   value
-}: InputFieldProps) => {
+}) => {
   return (
     <div className="flex flex-col gap-2 w-full">
       {label && (
         <label htmlFor={`select-${name}`} className="text-stone-800 dark:text-stone-200 capitalize">
-          <span className="uppercase border-b-2 border-sky-700">{label}</span> {required && <span className="text-sky-600 text-xl m-0 p-0" title="campo requerido">*</span>}
+          <span className="font-bold uppercase border-b-2 border-sky-700">{label}</span> {required && <span className="text-sky-600 text-xl m-0 p-0" title="campo requerido">*</span>}
         </label>
       )}
       <input

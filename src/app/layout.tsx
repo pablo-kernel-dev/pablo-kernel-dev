@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { layoutStyles } from "@/ui/tw_conts";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,10 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
+        <div className={`${layoutStyles}`}>
+          {children}
+        </div>
+
+        <div id="navbar-portal-root"></div>
+        <div id="modal-portal-root"></div>
       </body>
     </html>
   );

@@ -1,0 +1,1 @@
+export const layoutStyles = "bg-stone-200 dark:bg-stone-900 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-950 to-stone-950 bg-fixed text-stone-900 dark:text-stone-200 font-mono text-lg leading-relaxed min-h-screen";

@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { Button, ModalWindow } from "@/ui/components";
+import { Button, ModalPortal } from "@/ui/components";
 import { TaskProps } from "../types/task.types";
 
 interface TaskFormRemoveProps {
@@ -19,7 +19,7 @@ const TaskFormRemove: React.FC<TaskFormRemoveProps> = ({
   };
 
   return (
-    <ModalWindow
+    <ModalPortal
       actionButtonText={"Eliminar"}
       modalTitle={"Eliminar tarea"}
     >
@@ -38,7 +38,7 @@ const TaskFormRemove: React.FC<TaskFormRemoveProps> = ({
           <Button text={"eliminar tarea"} type="submit" aria-label="Eliminar tarea" />
         </form>
       </section>
-    </ModalWindow>
+    </ModalPortal>
   );
 };
 

@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { CONFIG_UI } from "@/config/appConfig";
 import Image from "next/image";
+import { CONFIG_UI } from "@/config/appConfig";
 import photoProfile from "@/utils/images/profile.png";
 import { GitHubIcon, GmailIcon } from "@/utils/icons";
 
 // &quot; = ""
 
-const HomeScreen = () => {
+const HomeScreen: React.FC = () => {
   return (
     <>
       <section className="bg-sky-950 outline outline-sky-700 text-stone-100 rounded-xl p-4 space-y-2">
@@ -21,9 +21,9 @@ const HomeScreen = () => {
             <Image src={photoProfile} alt="photo profile" />
           </figure>
 
-          <p className="text-xl w-full">
+          <p className="w-full">
             <span className="ml-4"></span>
-            Mi nombre es <strong className="text-2xl italic">Pablo</strong>. Soy programador de aplicaciones web y móviles con experiencia en el desarrollo de sistemas robustos y eficientes.
+            Mi nombre es <strong className="text-xl italic">Pablo</strong>. Soy programador de aplicaciones web y móviles con experiencia en el desarrollo de sistemas robustos y eficientes.
             Ofrezco mis servicios para crear soluciones, garantizando calidad y eficiencia.
           </p>
         </div>
@@ -47,19 +47,19 @@ const HomeScreen = () => {
 
       <div className={`${CONFIG_UI}`}>
         <p className="grid gap-4">
-          <span><strong className="text-2xl italic ml-4">Mi objetivo</strong> es incorporarme a los equipos que necesiten desarrolladores de confianza para escalar sus proyectos.</span>
-          <span><strong className="text-2xl italic ml-4">Tengo experiencia</strong> en educación y formación, aportes en sistemas para instituciones de uso público/privado, y diseño de interfaces de usuario centradas en la experiencia.</span>
+          <span><strong className="text-xl italic ml-4">Mi objetivo</strong> es incorporarme a los equipos que necesiten desarrolladores de confianza para escalar sus proyectos.</span>
+          <span><strong className="text-xl italic ml-4">Tengo experiencia</strong> en educación y formación, aportes en sistemas para instituciones de uso público/privado, y diseño de interfaces de usuario centradas en la experiencia.</span>
         </p>
       </div>
 
       <section className={`${CONFIG_UI}`}>
         <header>
-          <h2 className="text-3xl text-center">El camino de la informatica me llevo a conocer</h2>
+          <h2 className="text-3xl text-center font-bold uppercase">El camino de la informatica me llevo a conocer</h2>
         </header>
 
         <div className="grid md:grid-cols-2 gap-4">
           <article className="p-2">
-            <h3 className="text-2xl">Lenguajes</h3>
+            <h3 className="text-2xl capitalize">Lenguajes</h3>
 
             <ul className="list-disc italic px-6">
               <li>HTML, CSS, JavaScript, TypeScript</li>
@@ -70,7 +70,7 @@ const HomeScreen = () => {
           </article>
 
           <article className="p-2">
-            <h3 className="text-2xl">Herramientas</h3>
+            <h3 className="text-2xl capitalize">Herramientas</h3>
 
             <ul className="list-disc italic px-6">
               <li>WordPress</li>
@@ -81,7 +81,7 @@ const HomeScreen = () => {
           </article>
 
           <article className="p-2">
-            <h3 className="text-2xl">Librerías y Frameworks</h3>
+            <h3 className="text-2xl capitalize">Librerías y Frameworks</h3>
 
             <ul className="list-disc italic px-6">
               <li>React.js, AngularJS, Redux, Express</li>
@@ -91,7 +91,7 @@ const HomeScreen = () => {
           </article>
 
           <article className="p-2">
-            <h3 className="text-2xl">Otros Softwares</h3>
+            <h3 className="text-2xl capitalize">Otros Softwares</h3>
 
             <ul className="list-disc italic px-6">
               <li>Linux, Windows</li>
@@ -105,8 +105,8 @@ const HomeScreen = () => {
       </section>
 
       <div className={`${CONFIG_UI} space-y-2`}>
-        <p><strong className="text-2xl italic ml-4">Ser uno con el equipo</strong> es lo que me ayudara hará crecer.</p>
-        <p><strong className="text-2xl italic ml-4">Soy feliz programando</strong>, disfrutaré construyendo y brindando soporte a cualquier proyecto, sistema o programa.</p>
+        <p><strong className="text-xl italic ml-4">Ser uno con el equipo</strong> es lo que me ayudara hará crecer.</p>
+        <p><strong className="text-xl italic ml-4">Soy feliz programando</strong>, disfrutaré construyendo y brindando soporte a cualquier proyecto, sistema o programa.</p>
       </div>
     </>
   );

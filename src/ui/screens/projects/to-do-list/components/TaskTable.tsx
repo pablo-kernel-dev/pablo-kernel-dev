@@ -18,7 +18,7 @@ const ExpandRow: FC<ExpandRowProps> = ({ data, theadLenght }) => {
     <>
       <tr key={data.id} className={`${DEFAULT_STYLES} cursor-pointer`} onClick={toggleShowMore}>
         <td className="border-r-2 border-sky-700 p-2">{data.name}</td>
-        <td className={`p-2 text-center ${data.status ? "text-green-500" : "text-red-500"}`}>{data.status ? "FINALIZADA" : "INCOMPLETA"}</td>
+        <td className={`p-2 text-center font-bold ${data.status ? "text-green-500" : "text-red-500"}`}>{data.status ? "FINALIZADA" : "INCOMPLETA"}</td>
       </tr>
 
       {showMore &&
@@ -44,7 +44,7 @@ interface TaskTableProps {
 const TaskTable: FC<TaskTableProps> = ({ headers, columns }) => {
   return (
     <table className="outline outline-sky-700 rounded-xl w-full overflow-hidden">
-      <thead className="bg-sky-950">
+      <thead className="text-stone-200 bg-sky-950">
         <tr>
           {headers.map((header, index) =>
             <th key={index} className="p-2">

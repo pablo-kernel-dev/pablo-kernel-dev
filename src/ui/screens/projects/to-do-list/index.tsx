@@ -7,7 +7,7 @@ import { TaskCard, TaskForm, TaskFormRemove, TaskList, TaskTable } from "./compo
 import { TaskProps } from "./types/task.types";
 import { VIEW_OPTIONS } from "./config/const";
 
-const ToDoListScreen = () => {
+const ToDoListScreen: React.FC = () => {
   const { createTask, editTask, removeTask, error, isLoading, listTasks } = useTasks();
   const [viewOption, setViewOption] = useState(VIEW_OPTIONS[0]);
 
@@ -77,7 +77,7 @@ const ToDoListScreen = () => {
   };
 
   return (
-    <section className={`${CONFIG_UI} space-y-2  bg-red-500`}>
+    <section className={`${CONFIG_UI} space-y-2`}>
       <header className="space-y-1">
         <h3 className="text-2xl">Administrador de Tareas</h3>
         <h4>Este proyecto básico de React presenta un CRUD completo (crear, leer, actualizar, eliminar) para administrar una lista de tareas.</h4>
@@ -107,9 +107,9 @@ const ToDoListScreen = () => {
       </section>
 
       <section>
-        <p><span className="text-sky-600"><strong className="text-xl uppercase">Información</strong>:</span> Desarrollo de un CRUD de tareas, con visualización en tres formatos: lista, tabla y tarjetas.</p>
-        <p><span className="text-sky-600"><strong className="text-xl uppercase">Detalles</strong>:</span> Las modificaciones y alteraciones realizadas en esta versión no afectan ninguna base de datos.</p>
-        <p><span className="text-sky-600"><strong className="text-xl uppercase">Versión</strong>:</span> 1.0.0</p>
+        <p><span className="text-sky-700"><strong className="uppercase">Información</strong>:</span> Desarrollo de un CRUD de tareas, con visualización en tres formatos: lista, tabla y tarjetas.</p>
+        <p><span className="text-sky-700"><strong className="uppercase">Detalles</strong>:</span> Las modificaciones y alteraciones realizadas en esta versión no afectan ninguna base de datos.</p>
+        <p><span className="text-sky-700"><strong className="uppercase">Versión</strong>:</span> 1.0.0</p>
       </section>
     </section>
   );

@@ -51,7 +51,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
   return (
     <div className="flex items-center gap-2">
       {label && (
-        <label htmlFor={`select-${name}`} className="text-stone-800 dark:text-stone-200 capitalize">
+        <label htmlFor={`select-${name}`} className="text-stone-800 dark:text-stone-200">
           {label}
         </label>
       )}
@@ -61,11 +61,12 @@ const InputSelect: React.FC<InputSelectProps> = ({
         name={name}
         onChange={handleChange}
         value={value}
-        className={`bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 border rounded-md p-2 border-sky-700 ${className}`}
+        className={`bg-stone-200 dark:bg-stone-800 border border-sky-700 rounded-md font-bold uppercase p-2 ${className}`}
       >
-        <option value="" disabled>
+        <option value="-1" disabled>
           {placeholder}
         </option>
+
         {renderOptions()}
       </select>
     </div>

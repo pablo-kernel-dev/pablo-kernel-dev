@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Button, Checkbox, InputField, ModalWindow } from "@/ui/components";
+import { Button, Checkbox, InputField, ModalPortal } from "@/ui/components";
 import { TaskProps } from "../types/task.types";
 
 interface TaskFormProps {
@@ -38,12 +38,12 @@ const TaskForm: React.FC<TaskFormProps> = ({
   };
 
   return (
-    <ModalWindow
+    <ModalPortal
       actionButtonText={formData.id ? "Editar" : "Crear"}
       modalTitle={formData.id ? "Editar tarea" : "Crear Tarea"}
     >
       <form className="grid gap-6 p-4" onSubmit={handleSubmit}>
-        <p><span className="uppercase border-b-2 border-sky-700">id</span>: {formData.id}</p>
+        <p className="text-stone-200"><span className="font-bold uppercase border-b-2 border-sky-700">id</span>: {formData.id}</p>
 
         <InputField
           label="Nombre Tarea:"
@@ -66,7 +66,7 @@ const TaskForm: React.FC<TaskFormProps> = ({
           <Button text={formData.id ? "Actualizar" : "Guardar"} type="submit" aria-label="Guardar tarea" />
         </div>
       </form>
-    </ModalWindow>
+    </ModalPortal>
   );
 };
 
