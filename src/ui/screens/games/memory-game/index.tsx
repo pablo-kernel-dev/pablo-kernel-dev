@@ -13,6 +13,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ index, symbol, flipped, onClick }) => {
   return (
     <div
+      key={index}
       className={`text-xl font-bold flex items-center justify-center h-36 rounded-lg cursor-pointer transition-transform ${flipped ? "bg-green-500 text-white" : "bg-gray-700 text-transparent"}`}
       onClick={onClick}
     >
