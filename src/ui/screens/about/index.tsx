@@ -14,6 +14,13 @@ const AboutScreen: React.FC = () => {
 
   const contentRef = useRef(null);
 
+  const technologies = [
+    { name: 'HTML', next: 'SEO' },
+    { name: 'CSS', next: 'Tailwind CSS' },
+    { name: 'JavaScript', next: 'React' },
+    { name: 'React', next: 'Next.js & React Native' },
+  ];
+
   return (
     <>
       <header>
@@ -73,6 +80,27 @@ const AboutScreen: React.FC = () => {
       <section className={`${CONFIG_UI}`}>
         <p className="text-xl font-bold text-center uppercase">¡Gracias por visitar!</p>
       </section>
+
+      <div className="flex flex-col items-center space-y-6">
+      {technologies.map((tech, index) => (
+        <div key={index} className="flex flex-col items-center">
+          {/* Cuadro principal */}
+          <div className="bg-blue-500 text-white font-bold py-3 px-6 rounded-md shadow-md">
+            {tech.name}
+          </div>
+          {/* Línea conectora */}
+          {tech.next && (
+            <div className="flex flex-col items-center">
+              <div className="w-1 h-8 bg-gray-400"></div>
+              {/* Cuadro siguiente */}
+              <div className="bg-gray-200 text-black font-medium py-2 px-4 rounded-md shadow">
+                {tech.next}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
     </>
   );
 };
