@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button className={buttonClasses} disabled={disabled} {...props}>
       {leftIcon && <span>{leftIcon}</span>}
-      {text && <span className="text-stone-200">{text}</span>}
+      {text && <span>{text}</span>}
       {children}
       {rightIcon && <span>{rightIcon}</span>}
     </button>

@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import { CONFIG_UI } from "@/config/appConfig";
 import { Button } from "@/ui/components";
-import { dataYB } from "./dataYT";
+import { dataYB } from "./data/dataYT";
 
 const AboutScreen: React.FC = () => {
   const [expanded, setExpanded] = useState(false);
@@ -13,13 +13,6 @@ const AboutScreen: React.FC = () => {
   };
 
   const contentRef = useRef(null);
-
-  const technologies = [
-    { name: 'HTML', next: 'SEO' },
-    { name: 'CSS', next: 'Tailwind CSS' },
-    { name: 'JavaScript', next: 'React' },
-    { name: 'React', next: 'Next.js & React Native' },
-  ];
 
   return (
     <>
@@ -50,13 +43,13 @@ const AboutScreen: React.FC = () => {
                 <h3 className="text-2xl capitalize">{category}</h3>
 
                 <ul className="list-disc list-inside mt-2 space-y-1">
-                  {links.map((link) =>
+                  {links.map((link) => (
                     <li key={link.url}>
                       <Link href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-500 hover:underline font-bold">
                         {link.nombre}
                       </Link>
                     </li>
-                  )}
+                  ))}
                 </ul>
               </article>
             ))}
@@ -80,27 +73,6 @@ const AboutScreen: React.FC = () => {
       <section className={`${CONFIG_UI}`}>
         <p className="text-xl font-bold text-center uppercase">¡Gracias por visitar!</p>
       </section>
-
-      <div className="flex flex-col items-center space-y-6">
-      {technologies.map((tech, index) => (
-        <div key={index} className="flex flex-col items-center">
-          {/* Cuadro principal */}
-          <div className="bg-blue-500 text-white font-bold py-3 px-6 rounded-md shadow-md">
-            {tech.name}
-          </div>
-          {/* Línea conectora */}
-          {tech.next && (
-            <div className="flex flex-col items-center">
-              <div className="w-1 h-8 bg-gray-400"></div>
-              {/* Cuadro siguiente */}
-              <div className="bg-gray-200 text-black font-medium py-2 px-4 rounded-md shadow">
-                {tech.next}
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
     </>
   );
 };

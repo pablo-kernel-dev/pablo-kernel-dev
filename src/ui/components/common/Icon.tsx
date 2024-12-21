@@ -1,72 +1,44 @@
-import { MenuCloseIcon } from "@/utils/icons";
-import React from "react";
-// import { iconRegistry, IconTypes } from "./iconRegistry";
+import Image from "next/image";
 
-// import { BellIcon } from "./icons/BellIcon";
-// import { BackIcon } from "./icons/BackIcon";
-// import { HeartIcon } from "./icons/HeartIcon";
-// import { GithubIcon } from "./icons/GithubIcon";
+import htmlIcon from "@/utils/icons/html-icon.png";
+import cssIcon from "@/utils/icons/css-icon.png";
+import jsIcon from "@/utils/icons/javascript-icon.png";
+import phpIcon from "@/utils/icons/php-icon.png";
+import mysqlIcon from "@/utils/icons/mysql-icon.png";
+import csharpIcon from "@/utils/icons/c-sharp-icon.png";
+import kotlinIcon from "@/utils/icons/kotlin-icon.png";
 
-export const iconRegistry = {
-  bell: <MenuCloseIcon />,
-  back: <MenuCloseIcon />,
-  heart: <MenuCloseIcon />,
-  github: <MenuCloseIcon />,
+const icons: Record<string, string> = {
+  html: htmlIcon,
+  css: cssIcon,
+  javascript: jsIcon,
+  php: phpIcon,
+  mysql: mysqlIcon,
+  csharp: csharpIcon,
+  kotlin: kotlinIcon,
 };
 
-export type IconTypes = keyof typeof iconRegistry;
-
 interface IconProps {
-  /**
-   * The name of the icon to render.
-   */
-  icon: IconTypes;
-
-  /**
-   * Optional size for the icon (applies to width and height).
-   */
-  size?: number;
-
-  /**
-   * Optional color for the icon.
-   */
-  color?: string;
-
-  /**
-   * Additional styles for the icon container.
-   */
-  className?: string;
-
-  /**
-   * An optional onClick handler for interactivity.
-   */
-  onClick?: () => void;
+  name: string;
+  height?: number;
+  width?: number;
 }
 
-/**
- * A reusable `Icon` component for rendering SVG icons.
- */
-const Icon: React.FC<IconProps> = ({ icon, size = 24, color, className, onClick }) => {
-  const SvgIcon = iconRegistry[icon];
+const Icon: React.FC<IconProps> = ({ name, width = 24, height = 24 }) => {
+  const iconSrc = icons[name];
 
-  if (!SvgIcon) {
-    console.error(`Icon "${icon}" not found in the registry.`);
-    return null;
+  if (!iconSrc) {
+    console.warn(`Icono no encontrado: ${name}`);
+    return null; // No renderiza nada si el icono no existe
   }
 
   return (
-    <span
-      className={`inline-flex items-center justify-center ${className}`}
-      onClick={onClick}
-      style={{
-        width: size,
-        height: size,
-        cursor: onClick ? "pointer" : "default",
-        color, // This passes the color as CSS to the SVG.
-      }}
-    >
-      {/* <SvgIcon width={size} height={size} /> */}
-    </span>
+    <Image
+      src={iconSrc}
+      alt={`${name} icon`}
+      width={width}
+      height={height}
+    />
   );
 };
 
